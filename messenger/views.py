@@ -67,9 +67,14 @@ def message(request):
 
 def guess(request):
     if request.method == 'POST':
-        return redirect("message-detail")
+        return redirect("messageDetail")
     else:
-        return render(request, 'messenger/guess.html')
+        user = request.user
+        messages = Message.objects.filter(recipient=user)
+        message = messages[0]
+        hints = message.hint
+        text = message.text
+        return render(request, 'messenger/guess.html', {"text":text, "Hint":hints})
 
 
 def messageDetail(request):

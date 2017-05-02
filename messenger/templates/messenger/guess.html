@@ -33,10 +33,11 @@
 
 {% block content %}
 <div class="container" style="margin-left: 0 auto">
-  <form>
+  <form method = "post">
+      {% csrf_token %}
     <div class="form-group">
       <div class="chat-body1 clearfix" style="background-color: #f7d2e5 none repeat scroll 0 0;padding: 10px;">
-            <p><label class="pull-left"></label> There would be no history without the present, without the chain of transmissibility ensured by the formal identity of the presence of the present.</p>
+            <p><label class="pull-left"></label> {{text}}</p>
       </div>
       <ul id = "hints">
         <span>Hints: </span>
