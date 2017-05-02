@@ -66,15 +66,24 @@ def message(request):
 
 
 def guess(request):
+    friends = User.objects.all()
+
+    user = request.user
+    messages = Message.objects.filter(recipient=user)
+    message = messages[0]
+    hints = message.hint
+    text = message.text
+    sender = message.sender
+    guess = request.POST.get("guess")
+
     if request.method == 'POST':
-        return redirect("messageDetail")
+        if guess == sender.username:
+            return render(request, "messenger/messageDetail.html", {"Username":guess, "text":text})
+        else:
+            return redirect("guess")
     else:
-        user = request.user
-        messages = Message.objects.filter(recipient=user)
-        message = messages[0]
-        hints = message.hint
-        text = message.text
-        return render(request, 'messenger/guess.html', {"text":text, "Hint":hints})
+        return render(request, 'messenger/guess.html', {"text":text, "Hint":hints, "Friends":friends})
+
 
 
 def messageDetail(request):
