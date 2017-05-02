@@ -1,0 +1,17 @@
+{% extends 'messenger/base.html' %}
+{% block content %}
+{% endblock %}
+{% block notifications %}
+        <ul class="dropdown-menu">
+            {% for message in Messages %}
+          <li><a href="jd-message.html">New message from {{message.sender}}</a></li>
+            {% endfor %}
+        </ul>
+{% endblock %}
+{% block message %}
+        <ul class="dropdown-menu">
+            {% for friend in Friends %}
+          <li><a href="jd-message.html">{{friend.username}}</a></li>
+            {% endfor %}
+        </ul>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'messenger/base.html' %}
+{% block content %}
+{% endblock %}
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "stylesheet" href = "guess.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" href = "denglong.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+      {% block title_left %}
+        <a class="navbar-brand dropdown-toggle" data-toggle = "dropdown" href="#">Headaround
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Read message!</a></li>
+          <li><a href="#">Read hints!</a></li>
+          <li><a href="#">Guess who sent it!</a></li>
+        </ul>
+      </a>
+        {% endblock%}
+      {% block notifications %}
+        <ul class="dropdown-menu">
+          <li><a href="jd-message.html">New message from Jacque D.</a></li>
+          <li><a href="#">New message from Anonymous</a></li>
+        </ul>
+      {% endblock %}
+
+      {% block messages %}
+        <ul class="dropdown-menu">
+          <li><a href="jd-message.html">Jacque D.</a></li>
+          <li><a href="#">Martin H.</a></li>
+          <li><a href="#">Richard R.</a></li>
+          <li><a href="#">Maurice M-P</a></li>
+        </ul>
+      {% endblock %}
+
+<div class="container" style="margin-left: 0 auto">
+  <form>
+    <div class="form-group">
+      <div class="chat-body1 clearfix" style="background-color: #f7d2e5 none repeat scroll 0 0;padding: 10px;">
+            <p><label class="pull-left"></label> There would be no history without the present, without the chain of transmissibility ensured by the formal identity of the presence of the present.</p>
+      </div>
+      <ul id = "hints">
+        <span>Hints: </span>
+        <li style="margin-top: 20px">The historicity described by philosophy is not the historicity of the being of beings; it is the history of beings in their beingness.</li>
+      	<li style="margin-top: 5px">History of being cannot be thought in a phenomenology</li>
+      	<li style="margin-top: 5px">Destruction is not annihilation. The destruction of the privilege of the present could never erase them.</li>
+      </ul>
+
+      <div class="form-group">
+      	<label>Who sent this?</label>
+  		<select class="form-control" id="recipient">
+    		<option>Jacques D.</option>
+    		<option>Martin H.</option>
+    		<option>Richard R.</option>
+    		<option>Maurice M-P.</option>
+  		</select>
+	  </div>
+
+	  <button type="submit" class="btn btn-success col-lg-2 col-lg-offset-5" id = "guess">Guess</button>
+    </div>
+  </form>
+</div>
+<script type="text/javascript" src = "guess.js"></script>
+</body>
+</html>

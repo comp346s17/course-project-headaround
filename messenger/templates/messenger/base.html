@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Headaround</title>
+	<title>{% block title %}Headaround{% endblock %}</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel = "stylesheet" href = "custom.css">
@@ -14,7 +14,8 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid" style="color: #d83e53">
     <div class="navbar-header dropdown">
-      <a class="navbar-brand dropdown-toggle" data-toggle = "dropdown" href="#">Headaround
+        {% block title_left %}
+        <a class="navbar-brand dropdown-toggle" data-toggle = "dropdown" href="#">Headaround
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Write to your friends!</a></li>
@@ -22,60 +23,48 @@
           <li><a href="#">Choose recipient and hit send!</a></li>
         </ul>
       </a>
+        {% endblock %}
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Username</a></li>
+      <li><a href="#">{{user.username}}</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Notifications
         <span class="caret"></span></a>
-        <ul class="dropdown-menu">
+          {% block notifications %}
+          <ul class="dropdown-menu">
           <li><a href="jd-message.html">New message from Jacque D.</a></li>
           <li><a href="guess.html">New message from Anonymous</a></li>
         </ul>
+          {% endblock %}
        </li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Messages
         <span class="caret"></span></a>
-        <ul class="dropdown-menu">
+            {% block message%}
+          <ul class="dropdown-menu">
           <li><a href="jd-message.html">Jacque D.</a></li>
           <li><a href="#">Martin H.</a></li>
           <li><a href="#">Richard R.</a></li>
           <li><a href="#">Maurice M-P</a></li>
         </ul>
+          {% endblock %}
        </li>
-       
+
     </ul>
   </div>
 </nav>
 
-<div class="container" style="margin-left: 0 auto">
-  <form>
-    <div class="form-group">
-      <textarea class="form-control col-lg-4 " rows = "7" id="userpost" placeholder = "Write something to turn someone's head around!" style="margin-top: 40px"></textarea>
-      <div class = "form-group">
-      	<button type="button" id = "anonymous" class="btn btn-danger col-lg-2 col-lg-offset-5" style="margin-top: 10px; margin-bottom: 10px">Anonymous</button>
-      </div>
-      <div class="form-group" id = "hints">
-      	 <textarea class="form-control" rows = "1" placeholder = "Hint #1" style="margin-top: 20px"></textarea>
-      	 <textarea class="form-control" rows = "1" placeholder = "Hint #2" style="margin-top: 5px"></textarea>
-      	 <textarea class="form-control" rows="1" placeholder = "Hint #3" style="margin-top: 5px"></textarea>
-      </div>
-
-      <div class="form-group">
-  		<select class="form-control" id="recipient">
-    		<option>Jacques D.</option>
-    		<option>Martin H.</option>
-    		<option>Richard R.</option>
-    		<option>Maurice M-P.</option>
-  		</select>
-	  </div>
-
-	  <button type="submit" class="btn btn-success col-lg-2 col-lg-offset-5">Send</button>
-    </div>
-  </form>
-</div>
-
-<script type="text/javascript" src = "app.js"></script>
+    {% if user.is_authenticated %}
+        <span style="margin-left: 10px">Welcome, {{user.username}}!</span>
+        <a href="{% url 'logout' %}">logout</a>
+    {% else %}
+        <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
+    {% endif %}
+      <hr>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
 </body>
 </html>
