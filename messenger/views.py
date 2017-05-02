@@ -48,11 +48,16 @@ def message(request):
         for r in reci:
             msg.recipient = r
 
-        isDraft = request.POST.get("draft")
-        if isDraft in ['saveasdraft']:
-            msg.draft = True
+        isAnonymous = request.POST.get("anonymous")
+        if isAnonymous in ['send-anonymous']:
+            msg.anonymous = True
         else:
-            msg.draft = False
+            msg.anonymous = False
+
+        hint1 = request.POST.get("hint1")
+        hint2 = request.POST.get("hint2")
+        hint3 = request.POST.get("hint3")
+        msg.hint = hint1 + hint2 + hint3
 
         msg.save()
         return redirect("home")

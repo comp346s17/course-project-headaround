@@ -11,3 +11,4 @@ class Message(models.Model):
     sender = models.ForeignKey(User, related_name="sender")
     recipient = models.ForeignKey(User, related_name="recipient")
     text = models.TextField()
+    hint = models.TextField()
