@@ -1,0 +1,46 @@
+{% extends 'messenger/base.html' %}
+{% block content %}
+<head>
+	<title>Messages from {{user.username}}</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "stylesheet" href = "message.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" href = "denglong.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/45e03a14ce.js"></script>
+</head>
+<body>
+
+<div class="main_section">
+   <div class="container">
+		<div class="chat_area">
+			<ul class="list-unstyled">
+				<li class="sender clearfix">
+            		<div class="chat-body1 clearfix">
+                		<p><label class="pull-left">Jacque D.: </label> There would be no history without the present, without the chain of transmissibility ensured by the formal identity of the presence of the present.</p>
+            		</div>
+        	 	</li>
+        	 	<li class="user"></li>
+			</ul>
+		</div><!--chat_area-->
+        <div class="message_write">
+    	<textarea class="form-control" id="message" placeholder="Respond..."></textarea>
+		<div class="clearfix"></div>
+ 		<a href="#" class="pull-right btn btn-success" id = "send" style = "margin-top: 5px">Send</a>
+ 		</div>
+		</div>
+		</div>
+         </div> <!--message_section-->
+      </div>
+   </div>
+</body>
+{% load static %}
+<link rel="stylesheet" href="{% static 'messenger/message.css'%}"/>
+{% endblock %}
+{% block home%}
+      <li class="active"><a href="{% url 'home'%}">Home</a></li>
+{% endblock %}
+
+

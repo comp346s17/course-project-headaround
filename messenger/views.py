@@ -69,12 +69,12 @@ def guess(request):
     if request.method == 'POST':
         return redirect("message-detail")
     else:
-        return render(request, 'messenger/home.html')
+        return render(request, 'messenger/guess.html')
 
 
 def messageDetail(request):
     if request.method == 'POST':
         return redirect('home')
     else:
-        return render(request, 'messenger/home.html')
+        return render(request, 'messenger/messageDetail.html')
 

@@ -3,8 +3,9 @@
 {% block notifications %}
         <ul class="dropdown-menu">
             {% for message in Messages %}
-          <li><a href="jd-message.html">New message from {{message.sender}}</a></li>
+          <li><a href="{% url 'guess' %}">New message from {{message.sender}}</a></li>
             {% endfor %}
+            <li><a href="jd-message.html">No Messages</a></li>
         </ul>
 {% endblock %}
 {% block message %}
