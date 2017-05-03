@@ -3,7 +3,9 @@
 {% block notifications %}
         <ul class="dropdown-menu">
             {% for message in Messages %}
-          <li><a href="{% url 'guess' %}">New message from {{message.sender}}</a></li>
+          <li><a href="{% url 'guess' %}" id="{{forloop.counter}}" name="message_id" value="{{forloop.counter}}">New message from {{message.sender}}</a></li>
+            {% empty %}
+            <li><a>No notifications</a></li>
             {% endfor %}
         </ul>
 {% endblock %}

@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2c58db99-6a1a-4203-802d-1418f9418d4b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/messenger/templates/messenger/home.html" afterPath="$PROJECT_DIR$/messenger/templates/messenger/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/messenger/templates/messenger/messageDetail.html" afterPath="$PROJECT_DIR$/messenger/templates/messenger/messageDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/messenger/views.py" afterPath="$PROJECT_DIR$/messenger/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/messenger/urls.py" afterPath="$PROJECT_DIR$/messenger/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,12 +18,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/messenger/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="messageDetail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/messenger/templates/messenger/messageDetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="30" column="67" lean-forward="false" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
+            <state relative-caret-position="1280">
+              <caret line="39" column="67" lean-forward="true" selection-start-line="39" selection-start-column="67" selection-end-line="39" selection-end-column="67" />
               <folding>
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -31,8 +44,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/messenger/templates/messenger/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1218">
-              <caret line="39" column="21" lean-forward="false" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+            <state relative-caret-position="200">
+              <caret line="5" column="109" lean-forward="false" selection-start-line="5" selection-start-column="109" selection-end-line="5" selection-end-column="109" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#textarea#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
@@ -48,8 +61,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/messenger/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1338">
-              <caret line="94" column="23" lean-forward="true" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
+            <state relative-caret-position="1378">
+              <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -136,14 +149,14 @@
         <option value="$PROJECT_DIR$/headaround/urls.py" />
         <option value="$PROJECT_DIR$/headaround/settings.py" />
         <option value="$PROJECT_DIR$/messenger/templates/messenger/message-detail" />
-        <option value="$PROJECT_DIR$/messenger/urls.py" />
         <option value="$PROJECT_DIR$/messenger/templates/messenger/messageDetail" />
         <option value="$PROJECT_DIR$/messenger/templates/messenger/base.html" />
-        <option value="$PROJECT_DIR$/messenger/templates/messenger/home.html" />
         <option value="$PROJECT_DIR$/messenger/models.py" />
         <option value="$PROJECT_DIR$/messenger/templates/messenger/guess.html" />
+        <option value="$PROJECT_DIR$/messenger/templates/messenger/home.html" />
         <option value="$PROJECT_DIR$/messenger/templates/messenger/messageDetail.html" />
         <option value="$PROJECT_DIR$/messenger/views.py" />
+        <option value="$PROJECT_DIR$/messenger/urls.py" />
       </list>
     </option>
   </component>
@@ -359,7 +372,7 @@
     <frame x="-16" y="-16" width="3872" height="2092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -598,16 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/messenger/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/messenger/templates/messenger/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
@@ -619,6 +622,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/messenger/static/messenger/guess.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/messenger/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -627,10 +638,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/messenger/static/messenger/guess.js">
+    <entry file="file://$PROJECT_DIR$/messenger/templates/messenger/messageDetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1280">
+          <caret line="39" column="67" lean-forward="true" selection-start-line="39" selection-start-column="67" selection-end-line="39" selection-end-column="67" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/messenger/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -652,8 +674,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/messenger/templates/messenger/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1218">
-          <caret line="39" column="21" lean-forward="false" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+        <state relative-caret-position="200">
+          <caret line="5" column="109" lean-forward="false" selection-start-line="5" selection-start-column="109" selection-end-line="5" selection-end-column="109" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
@@ -665,20 +687,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/messenger/templates/messenger/messageDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="30" column="67" lean-forward="false" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/messenger/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1338">
-          <caret line="94" column="23" lean-forward="true" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
+        <state relative-caret-position="1378">
+          <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
