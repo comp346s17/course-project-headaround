@@ -50,10 +50,7 @@ def message(request):
 
         msg.anonymous = True
 
-        hint1 = request.POST.get("hint1")
-        hint2 = request.POST.get("hint2")
-        hint3 = request.POST.get("hint3")
-        msg.hint = hint1 + hint2 + hint3
+        msg.hint = request.POST.get("hint")
 
         msg.save()
         return redirect("home")
@@ -67,7 +64,7 @@ def guess(request):
     user = request.user
     messages = Message.objects.filter(recipient=user, anonymous=True)
     message = messages[0]
-    hints = message.hint
+    hint = message.hint
     text = message.text
     sender = message.sender
     guess = request.POST.get("guess")
@@ -86,7 +83,7 @@ def guess(request):
     else:
         counterGet = counterGet + 1
 
-        return render(request, 'messenger/guess.html', {"text":text, "Hint":hints, "Friends":friends})
+        return render(request, 'messenger/guess.html', {"text":text, "Hint":hint, "Friends":friends})
 
 
 def messageDetail(request):
