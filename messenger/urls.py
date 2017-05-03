@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^accounts/profile/', views.home, name='home'),
     url(r'^message/$', views.message, name='message'),
-    url(r'^messageDetail/$', views.messageDetail, name='messageDetail'),
     url(r'^guess/$', views.guess, name='guess'),
+    url(r'^guess/$', views.messageDetail, name='messageDetail'),
 ]
 

@@ -3,7 +3,7 @@
 {% block notifications %}
         <ul class="dropdown-menu">
             {% for message in Messages %}
-          <li><a href="{% url 'guess' %}" id="{{forloop.counter}}" name="message_id" value="{{forloop.counter}}">New message from {{message.sender}}</a></li>
+          <li><a href="{% url 'guess' %}" id="{{message.sender}}" name="message_id" value="{{forloop.counter}}">New message from anonymous</a></li>
             {% empty %}
             <li><a>No notifications</a></li>
             {% endfor %}
@@ -23,7 +23,7 @@
     <div class="form-group">
       <textarea name="message" class="form-control col-lg-4 " rows = "7" id="userpost" placeholder = "Write something to turn someone's head around!" style="margin-top: 40px"></textarea>
       <div class = "form-group">
-      	<button name="anonymous" value="send-anonymous" type="button" id = "anonymous" class="btn btn-danger col-lg-2 col-lg-offset-5" style="margin-top: 10px; margin-bottom: 10px">Anonymous</button>
+      	<button name="anonymous" value="send-anonymous" type="button" id = "anonymous" class="btn btn-danger col-lg-2 col-lg-offset-5" style="margin-top: 10px; margin-bottom: 10px">Write Hints</button>
       </div>
       <div class="form-group" id = "hints">
       	 <textarea name="hint1" class="form-control" rows = "1" placeholder = "Hint #1" style="margin-top: 20px"></textarea>

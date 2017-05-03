@@ -11,10 +11,10 @@ from django.contrib.auth.models import User
 
 def home(request):
     user = request.user
-    anonyMessages = Message.objects.filter(recipient=user, anonymous=True)
-    messages = Message.objects.filter(recipient=user, anonymous=False)
+    # anonyMessages = Message.objects.filter(recipient=user, anonymous=True)
+    messages = Message.objects.filter(recipient=user, anonymous=True)
     friends = User.objects.all()
-    return render(request, 'messenger/home.html', {'Anony':anonyMessages, 'Messages':messages, 'Friends':friends})
+    return render(request, 'messenger/home.html', {'Messages':messages, 'Friends':friends})
 
 
 def signup(request):
@@ -48,11 +48,7 @@ def message(request):
         for r in reci:
             msg.recipient = r
 
-        isAnonymous = request.POST.get("anonymous")
-        if isAnonymous in ['send-anonymous']:
-            msg.anonymous = True
-        else:
-            msg.anonymous = False
+        msg.anonymous = True
 
         hint1 = request.POST.get("hint1")
         hint2 = request.POST.get("hint2")
@@ -69,32 +65,38 @@ def guess(request):
     friends = User.objects.all()
 
     user = request.user
-    messages = Message.objects.filter(recipient=user)
+    messages = Message.objects.filter(recipient=user, anonymous=True)
     message = messages[0]
     hints = message.hint
     text = message.text
     sender = message.sender
     guess = request.POST.get("guess")
-    count = 0
+    counterPost = 0
+    counterGet = 0
     if request.method == 'POST':
-        count = count + 1
-        if (guess == sender.username) and (count < 3):
+        count = counterPost + 1
+
+        if (guess == sender.username) and (counterPost < 3):
             return render(request, "messenger/messageDetail.html", {"Username": guess, "text": text})
-        elif (guess != sender.username) and (count < 3):
+        elif (guess != sender.username) and (counterPost < 3):
             return redirect("guess")
         elif count > 3:
             displayString = "You have guessed three times."
             return render(request, "messenger/guess.html", {"Display": displayString})
     else:
+        counterGet = counterGet + 1
+
         return render(request, 'messenger/guess.html', {"text":text, "Hint":hints, "Friends":friends})
 
 
 def messageDetail(request):
     originalSender = request.GET.get("friendName")
+
     if request.method == 'POST':
         msg = Message()
         msg.text = request.POST.get("message")
-        msg.recipient = User.objects.get(username=originalSender)
+        msg.anonymous = False
+        msg.recipient = User.objects.get(username="Andrew")
         msg.sender = request.user
         msg.save()
         return redirect('home')
