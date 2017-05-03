@@ -89,9 +89,14 @@ def guess(request):
         return render(request, 'messenger/guess.html', {"text":text, "Hint":hints, "Friends":friends})
 
 
-
 def messageDetail(request):
+    originalSender = request.GET.get("friendName")
     if request.method == 'POST':
+        msg = Message()
+        msg.text = request.POST.get("message")
+        msg.recipient = User.objects.get(username=originalSender)
+        msg.sender = request.user
+        msg.save()
         return redirect('home')
     else:
         return render(request, 'messenger/messageDetail.html')

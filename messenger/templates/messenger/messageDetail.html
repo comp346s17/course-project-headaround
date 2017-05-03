@@ -19,7 +19,7 @@
 			<ul class="list-unstyled">
 				<li class="sender clearfix">
             		<div class="chat-body1 clearfix">
-                		<p><label class="pull-left">{{Username}}:</label>{{text}}</p>
+                		<p name = "messageText"><label class="pull-left" name="friendName">{{Username}}:</label>{{text}}</p>
             		</div>
         	 	</li>
         	 	<li class="user"></li>
@@ -28,9 +28,9 @@
        <form method="post">
            {% csrf_token %}
            <div class="message_write">
-    	<textarea class="form-control" id="message" placeholder="Respond..."></textarea>
+    	<textarea class="form-control" id="message" name="message" placeholder="Respond..."></textarea>
 		<div class="clearfix"></div>
- 		<button type="submit" class="btn btn-success pull-right" style="margin-top: 5px;">Send</button>
+ 		<button type="submit" class="btn btn-success pull-right" style="margin-top: 5px;">Reply</button>
  		</div>
        </form>
 		</div>

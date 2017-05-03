@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2c58db99-6a1a-4203-802d-1418f9418d4b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/messenger/templates/messenger/guess.html" afterPath="$PROJECT_DIR$/messenger/templates/messenger/guess.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/messenger/templates/messenger/messageDetail.html" afterPath="$PROJECT_DIR$/messenger/templates/messenger/messageDetail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/messenger/views.py" afterPath="$PROJECT_DIR$/messenger/views.py" />
     </list>
@@ -20,8 +19,8 @@
       <file leaf-file-name="messageDetail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/messenger/templates/messenger/messageDetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+            <state relative-caret-position="858">
+              <caret line="30" column="67" lean-forward="false" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
               </folding>
@@ -49,8 +48,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/messenger/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1218">
-              <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+            <state relative-caret-position="1338">
+              <caret line="94" column="23" lean-forward="true" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -143,8 +142,8 @@
         <option value="$PROJECT_DIR$/messenger/templates/messenger/home.html" />
         <option value="$PROJECT_DIR$/messenger/models.py" />
         <option value="$PROJECT_DIR$/messenger/templates/messenger/guess.html" />
-        <option value="$PROJECT_DIR$/messenger/views.py" />
         <option value="$PROJECT_DIR$/messenger/templates/messenger/messageDetail.html" />
+        <option value="$PROJECT_DIR$/messenger/views.py" />
       </list>
     </option>
   </component>
@@ -668,8 +667,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/messenger/templates/messenger/messageDetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+        <state relative-caret-position="858">
+          <caret line="30" column="67" lean-forward="false" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
           <folding>
             <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
@@ -678,8 +677,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/messenger/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1218">
-          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        <state relative-caret-position="1338">
+          <caret line="94" column="23" lean-forward="true" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
