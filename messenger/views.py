@@ -75,12 +75,16 @@ def guess(request):
     text = message.text
     sender = message.sender
     guess = request.POST.get("guess")
-
+    count = 0
     if request.method == 'POST':
-        if guess == sender.username:
-            return render(request, "messenger/messageDetail.html", {"Username":guess, "text":text})
-        else:
+        count = count + 1
+        if (guess == sender.username) and (count < 3):
+            return render(request, "messenger/messageDetail.html", {"Username": guess, "text": text})
+        elif (guess != sender.username) and (count < 3):
             return redirect("guess")
+        elif count > 3:
+            displayString = "You have guessed three times."
+            return render(request, "messenger/guess.html", {"Display": displayString})
     else:
         return render(request, 'messenger/guess.html', {"text":text, "Hint":hints, "Friends":friends})
 

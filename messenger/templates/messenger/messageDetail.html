@@ -24,17 +24,17 @@
         	 	</li>
         	 	<li class="user"></li>
 			</ul>
-		</div><!--chat_area-->
-        <div class="message_write">
+		</div>
+       <form method="post">
+           {% csrf_token %}
+           <div class="message_write">
     	<textarea class="form-control" id="message" placeholder="Respond..."></textarea>
 		<div class="clearfix"></div>
- 		<a href="#" class="pull-right btn btn-success" id = "send" style = "margin-top: 5px">Send</a>
+ 		<button type="submit" class="btn btn-success pull-right" style="margin-top: 5px;">Send</button>
  		</div>
+       </form>
 		</div>
 		</div>
-         </div> <!--message_section-->
-      </div>
-   </div>
 </body>
 {% load static %}
 <link rel="stylesheet" href="{% static 'messenger/message.css'%}"/>
