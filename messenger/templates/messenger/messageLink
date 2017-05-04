@@ -21,20 +21,14 @@
             		<div class="chat-body1 clearfix">
                         {% for message in Messages %}
                 		<p name = "messageText"><label class="pull-left" name="friendName">{{message.sender.username}}:</label>{{message.text}}</p>
+                        <a href="{% url 'messageDetail'%}?id={{message.sender.id}}">Start a conversation!</a>
                         {% endfor %}
             		</div>
         	 	</li>
         	 	<li class="user"></li>
 			</ul>
 		</div>
-       <form method="post" action="/guess/?id={{User.id}}">
-           {% csrf_token %}
-           <div class="message_write form-group" style="bottom:0; style:fixed;">
-    	<textarea class="form-control" id="message" name="message" placeholder="Respond..."></textarea>
-		<div class="clearfix"></div>
- 		<button type="submit" class="btn btn-success pull-right" style="margin-top: 5px;">Send</button>
- 		</div>
-       </form>
+
 		</div>
 		</div>
 </body>

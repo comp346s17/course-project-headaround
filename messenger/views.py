@@ -11,7 +11,6 @@ from django.contrib.auth.models import User
 
 def home(request):
     user = request.user
-    # anonyMessages = Message.objects.filter(recipient=user, anonymous=True)
     messages = Message.objects.filter(recipient=user, anonymous=True)
     friends = User.objects.all()
     return render(request, 'messenger/home.html', {'Messages':messages, 'Friends':friends})
@@ -63,20 +62,16 @@ def guess(request):
     message_id = request.GET.get('id')
     user = request.user
     message = Message.objects.get(id=message_id)
-    # message = messages[0]
     hint = message.hint
     text = message.text
     sender = message.sender
     guess = request.POST.get("guess")
-    messages = Message.objects.filter(sender=sender)
+    messages = Message.objects.filter(sender=sender, recipient=user)
     if request.method == 'POST':
         if guess == sender.username:
             return render(request, "messenger/messageDetail.html", {"Username": guess, "Messages": messages})
         else:
             return redirect("home")
-        # elif counterPost > 3:
-        #     displayString = "You have guessed three times."
-        #     return render(request, "messenger/guess.html", {"Display": displayString})
     else:
         return render(request, 'messenger/guess.html', {"text":text, "Hint":hint, "Friends":friends})
 
