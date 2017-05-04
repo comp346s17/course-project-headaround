@@ -19,13 +19,15 @@
 			<ul class="list-unstyled">
 				<li class="sender clearfix">
             		<div class="chat-body1 clearfix">
-                		<p name = "messageText"><label class="pull-left" name="friendName">{{Username}}:</label>{{text}}</p>
+                        {% for message in Messages %}
+                		<p name = "messageText"><label class="pull-left" name="friendName">{{Username}}:</label>{{message.text}}</p>
+                        {% endfor %}
             		</div>
         	 	</li>
         	 	<li class="user"></li>
 			</ul>
 		</div>
-       <form method="post">
+       <form method="post" action="/messageDetail/">
            {% csrf_token %}
            <div class="message_write form-group" style="bottom:0; style:fixed;">
     	<textarea class="form-control" id="message" name="message" placeholder="Respond..."></textarea>

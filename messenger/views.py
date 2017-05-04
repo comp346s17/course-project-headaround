@@ -60,40 +60,40 @@ def message(request):
 
 def guess(request):
     friends = User.objects.all()
-
+    message_id = request.GET.get('id')
     user = request.user
-    messages = Message.objects.filter(recipient=user, anonymous=True)
-    message = messages[0]
+    message = Message.objects.get(id=message_id)
+    # message = messages[0]
     hint = message.hint
     text = message.text
     sender = message.sender
     guess = request.POST.get("guess")
-    counterPost = 0
-    counterGet = 0
+    messages = Message.objects.filter(sender=sender)
     if request.method == 'POST':
-        count = counterPost + 1
-        if (guess == sender.username) and (counterPost < 3):
-            return render(request, "messenger/messageDetail.html", {"Username": guess, "text": text})
-        elif (guess != sender.username) and (counterPost < 3):
-            return redirect("guess")
-        elif count > 3:
-            displayString = "You have guessed three times."
-            return render(request, "messenger/guess.html", {"Display": displayString})
+        if guess == sender.username:
+            return render(request, "messenger/messageDetail.html", {"Username": guess, "Messages": messages})
+        else:
+            return redirect("home")
+        # elif counterPost > 3:
+        #     displayString = "You have guessed three times."
+        #     return render(request, "messenger/guess.html", {"Display": displayString})
     else:
         return render(request, 'messenger/guess.html', {"text":text, "Hint":hint, "Friends":friends})
 
 
 def messageDetail(request):
-    originalSender = request.GET.get("friendName")
-
     if request.method == 'POST':
         msg = Message()
         msg.text = request.POST.get("message")
         msg.anonymous = False
-        msg.recipient = User.objects.get(username="Andrew")
+        friend_id = request.GET.get('id')
+        friend = User.objects.get(id=friend_id)
+        msg.recipient = friend
         msg.sender = request.user
         msg.save()
         return redirect('home')
     else:
-        return render(request, 'messenger/messageDetail.html')
-
+        friend_id = request.GET.get('id')
+        friend = User.objects.get(id=friend_id)
+        messages = Message.objects.filter(sender=friend)
+        return render(request, 'messenger/messageDetail.html', {"Username":friend.username, "Messages":messages})

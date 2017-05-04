@@ -32,6 +32,8 @@
 {% endblock %}
 
 {% block content %}
+{% load static %}
+<script type="text/javascript" href="{% static 'messenger/guess.js' %}"></script>
 <div style="color:red">{{Display}}</div>
 <div class="container" style="margin-left: 0 auto">
   <form method = "post">
@@ -58,8 +60,7 @@
     </div>
   </form>
 </div>
-{% load static %}
-<script type="text/javascript" src="{% static 'messenger/guess.js' %}"></script>
+
 {% endblock %}
 
 

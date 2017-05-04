@@ -3,7 +3,7 @@
 {% block notifications %}
         <ul class="dropdown-menu">
             {% for message in Messages %}
-          <li><a href="{% url 'guess' %}" id="{{message.sender}}" name="message_id" value="{{forloop.counter}}">New message from anonymous</a></li>
+          <li><a href="{% url 'guess' %}?id={{message.id}}" id="{{message.sender}}" name="message_id" value="{{message.id}}">New message from anonymous</a></li>
             {% empty %}
             <li><a>No notifications</a></li>
             {% endfor %}
@@ -12,7 +12,7 @@
 {% block message %}
         <ul class="dropdown-menu">
             {% for friend in Friends %}
-          <li><a href="#">{{friend.username}}</a></li>
+          <li><a href="{% url 'messageDetail' %}?id={{friend.id}}">{{friend.username}}</a></li>
             {% endfor %}
         </ul>
 {% endblock %}
