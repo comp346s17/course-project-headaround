@@ -3,7 +3,7 @@
 {% block notifications %}
         <ul class="dropdown-menu">
             {% for message in Messages %}
-          <li><a href="{% url 'guess' %}?id={{message.id}}" id="{{message.sender}}" name="message_id" value="{{message.id}}">New message from anonymous</a></li>
+          <li><a href="{% url 'guess' %}?id={{message.id}}" id="{{message.sender}}" name="message_id" value="{{message.id}}">New anonymous message!</a></li>
             {% empty %}
             <li><a>No notifications</a></li>
             {% endfor %}

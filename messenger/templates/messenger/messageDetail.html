@@ -21,6 +21,8 @@
             		<div class="chat-body1 clearfix">
                         {% for message in Messages %}
                 		<p name = "messageText"><label class="pull-left" name="friendName">{{message.sender.username}}:</label>{{message.text}}</p>
+						{% empty %}
+						<p>No messages</p>
                         {% endfor %}
             		</div>
         	 	</li>

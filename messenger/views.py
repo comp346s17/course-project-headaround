@@ -90,5 +90,5 @@ def messageDetail(request):
     else:
         friend_id = request.GET.get('id')
         friend = User.objects.get(id=friend_id)
-        messages = Message.objects.filter(sender=friend)
+        messages = Message.objects.filter(sender=friend, recipient=request.user)
         return render(request, 'messenger/messageDetail.html', {"Username":friend.username, "Messages":messages})
