@@ -65,11 +65,12 @@ def guess(request):
     hint = message.hint
     text = message.text
     sender = message.sender
-    guess = request.POST.get("guess")
-    messages = Message.objects.filter(sender=sender, recipient=user)
     if request.method == 'POST':
+        guess = request.POST.get("guess")
+        conversation_user = User.objects.get(username=guess)
+        messages = Message.objects.filter(sender=sender, recipient=user)
         if guess == sender.username:
-            return render(request, "messenger/messageDetail.html", {"Username": guess, "Messages": messages})
+            return render(request, "messenger/messageDetail.html", {"Username": guess, "Messages": messages, "conversation":conversation_user})
         else:
             return redirect("home")
     else:
@@ -77,12 +78,12 @@ def guess(request):
 
 
 def messageDetail(request):
+    friend_id = request.GET.get('id')
+    friend = User.objects.get(id=friend_id)
     if request.method == 'POST':
         msg = Message()
         msg.text = request.POST.get("message")
         msg.anonymous = False
-        friend_id = request.GET.get('id')
-        friend = User.objects.get(id=friend_id)
         msg.recipient = friend
         msg.sender = request.user
         msg.save()
@@ -91,4 +92,4 @@ def messageDetail(request):
         friend_id = request.GET.get('id')
         friend = User.objects.get(id=friend_id)
         messages = Message.objects.filter(sender=friend, recipient=request.user)
-        return render(request, 'messenger/messageDetail.html', {"Username":friend.username, "Messages":messages})
+        return render(request, 'messenger/messageDetail.html', {"Username":friend.username, "Messages":messages, "conversation":friend})

@@ -22,14 +22,14 @@
                         {% for message in Messages %}
                 		<p name = "messageText"><label class="pull-left" name="friendName">{{message.sender.username}}:</label>{{message.text}}</p>
 						{% empty %}
-						<p>No messages</p>
+						<p>No inbox messages</p>
                         {% endfor %}
             		</div>
         	 	</li>
         	 	<li class="user"></li>
 			</ul>
 		</div>
-       <form method="post" action="/guess/?id={{User.id}}">
+       <form method="post" action="/messageDetail/?id={{conversation.id}}">
            {% csrf_token %}
            <div class="message_write form-group" style="bottom:0; style:fixed;">
     	<textarea class="form-control" id="message" name="message" placeholder="Respond..."></textarea>
